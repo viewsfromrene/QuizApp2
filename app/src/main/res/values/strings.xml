@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name" translatable="false">NIGERIA 101</string>
+    <string name="topic" translatable="false">NIGERIA 101</string>
+    <string name="question_1">1. What is your name ?</string>
+    <string name="name">Name</string>
+    <string name="question_2">2. What continent is Nigeria in ?</string>
+    <string name="a2">Asia</string>
+    <string name="b2">Africa</string>
+    <string name="c2">South America</string>
+    <string name="question_3">3. What are people from Nigeria called ?</string>
+    <string name="a3">Nigerians</string>
+    <string name="b3">Nigerans</string>
+    <string name="c3">Biafrans</string>
+    <string name="question_4">4. What is the current capital of Nigeria ?</string>
+    <string name="a4">Lagos</string>
+    <string name="b4">Abuja</string>
+    <string name="c4">Calabar</string>
+    <string name="question_5">5. How many major ethnic groups are in Nigeria ?</string>
+    <string name="a5">4</string>
+    <string name="b5">3</string>
+    <string name="c5">8</string>
+    <string name="question_6">6. What are/is the major ethic group/s in Nigeria ?</string>
+    <string name="a6">Igbo</string>
+    <string name="b6">Fulani</string>
+    <string name="c6">Hausa</string>
+    <string name="d6">Yoruba</string>
+    <string name="e6">Tiv</string>
+    <string name="f6">French</string>
+    <string name="question_7">7. What is the Lingua Franca of Nigeria ?</string>
+    <string name="a7">French</string>
+    <string name="b7">Igbo</string>
+    <string name="c7">English</string>
+    <string name="question_8">8. Nigeria is often regarded as ?</string>
+    <string name="a8">The Coal City</string>
+    <string name="b8">Giant of Africa</string>
+    <string name="c8">The Colourful state</string>
+    <string name="question_9">9. How many states are in Nigeria ?</string>
+    <string name="a9">20</string>
+    <string name="b9">30</string>
+    <string name="c9">36</string>
+    <string name="question_10">10. Would you like to visit Nigeria ?</string>
+    <string name="a10">Yes</string>
+    <string name="b10">No</string>
+    <string name="submit">SUBMIT</string>
+    <string name="reset">RESET</string>
+    <string name="thanks">Welcome to a short quiz about Nigeria</string>
+    <string name="score">Hi</string>
+
+</resources>
