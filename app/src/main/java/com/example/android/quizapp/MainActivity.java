@@ -1,5 +1,6 @@
 package com.example.android.quizapp;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
     int score = 0;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /*This defines the reset button and clears all existing input so users can start filling afresh*/
     public void reset(View view) {
         score = 0;
 
@@ -70,10 +73,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*This defines the submit button*/
     public void submit(View view) {
+
+        score = 0;
 
         EditText nameCollect = findViewById(R.id.name);
         String name = nameCollect.getText().toString();
+
+        if (name.isEmpty()) {
+            TextView targetView = findViewById(R.id.question1);
+            targetView.getParent().requestChildFocus(targetView, targetView);
+            Toast.makeText(this, "TELL ME YOUR NAME", Toast.LENGTH_SHORT).show();
+            score = 0;
+        }
 
         RadioGroup question2 = findViewById(R.id.radiogroup2);
         int q2 = question2.getCheckedRadioButtonId();
@@ -84,6 +97,16 @@ public class MainActivity extends AppCompatActivity {
             getScore(1);
         } else if (q2 == R.id.c2) {
             getScore(0);
+        }
+
+        /*This ensures that the question a radiobutton is selected to go forward  */
+
+        if (question2.getCheckedRadioButtonId() == -1)
+        {
+            TextView targetView = findViewById(R.id.question2);
+            targetView.getParent().requestChildFocus(targetView, targetView);
+            Toast.makeText(this, "You havent answered Question 2", Toast.LENGTH_SHORT).show();
+            score = 0;
         }
 
         RadioGroup question3 = findViewById(R.id.radiogroup3);
@@ -97,6 +120,13 @@ public class MainActivity extends AppCompatActivity {
             getScore(0);
         }
 
+        if (question3.getCheckedRadioButtonId() == -1)
+        {
+            TextView targetView = findViewById(R.id.question3);
+            targetView.getParent().requestChildFocus(targetView, targetView);
+            Toast.makeText(this, "You havent answered Question 3", Toast.LENGTH_SHORT).show();
+            score = 0;
+        }
         RadioGroup question4 = findViewById(R.id.radiogroup4);
         int q4 = question4.getCheckedRadioButtonId();
 
@@ -106,6 +136,14 @@ public class MainActivity extends AppCompatActivity {
             getScore(1);
         } else if (q4 == R.id.c4) {
             getScore(0);
+        }
+
+        if (question4.getCheckedRadioButtonId() == -1)
+        {
+            TextView targetView = findViewById(R.id.question4);
+            targetView.getParent().requestChildFocus(targetView, targetView);
+            Toast.makeText(this, "You havent answered Question 4", Toast.LENGTH_SHORT).show();
+            score = 0;
         }
 
         RadioGroup question5 = findViewById(R.id.radiogroup5);
@@ -119,45 +157,45 @@ public class MainActivity extends AppCompatActivity {
             getScore(0);
         }
 
+        if (question5.getCheckedRadioButtonId() == -1)
+        {
+            TextView targetView = findViewById(R.id.question5);
+            targetView.getParent().requestChildFocus(targetView, targetView);
+            Toast.makeText(this, "You havent answered Question 5", Toast.LENGTH_SHORT).show();
+            score = 0;
+        }
+
         CheckBox questiona6 = findViewById(R.id.a6);
         boolean a6 = questiona6.isChecked();
-
-        if (a6) {
-            getScore(1);
-        }
 
         CheckBox questionb6 = findViewById(R.id.b6);
         boolean b6 = questionb6.isChecked();
 
-        if (b6) {
-            getScore(0);
-        }
-
         CheckBox questionc6 = findViewById(R.id.c6);
         boolean c6 = questionc6.isChecked();
-
-        if (c6) {
-            getScore(1);
-        }
 
         CheckBox questiond6 = findViewById(R.id.d6);
         boolean d6 = questiond6.isChecked();
 
-        if (d6) {
-            getScore(1);
-        }
-
         CheckBox questione6 = findViewById(R.id.e6);
         boolean e6 = questione6.isChecked();
 
-        if (e6) {
+        CheckBox questionf6 = findViewById(R.id.f6);
+        boolean f6 = questionf6.isChecked();
+
+
+        if (a6 && c6 && d6 && !b6 && !e6 && !f6 ) {
+            getScore(3);
+        } else {
             getScore(0);
         }
 
-        CheckBox questionf6 = findViewById(R.id.f6);
-        boolean f6 = questionf6.isChecked();
-        if (f6) {
-            getScore(0);
+        if (!questiona6.isChecked() && !questionb6.isChecked() && !questionc6.isChecked() && !questiond6.isChecked() && !questione6.isChecked() && !questionf6.isChecked())
+        {
+            TextView targetView = findViewById(R.id.question6);
+            targetView.getParent().requestChildFocus(targetView, targetView);
+            Toast.makeText(this, "You havent answered Question 6", Toast.LENGTH_SHORT).show();
+            score = 0;
         }
 
         RadioGroup question7 = findViewById(R.id.radiogroup7);
@@ -171,6 +209,14 @@ public class MainActivity extends AppCompatActivity {
             getScore(1);
         }
 
+        if (question7.getCheckedRadioButtonId() == -1)
+        {
+            TextView targetView = findViewById(R.id.question7);
+            targetView.getParent().requestChildFocus(targetView, targetView);
+            Toast.makeText(this, "You havent answered Question 7", Toast.LENGTH_SHORT).show();
+            score = 0;
+        }
+
         RadioGroup question8 = findViewById(R.id.radiogroup8);
         int q8 = question8.getCheckedRadioButtonId();
 
@@ -180,6 +226,14 @@ public class MainActivity extends AppCompatActivity {
             getScore(1);
         } else if (q8 == R.id.c8) {
             getScore(0);
+        }
+
+        if (question8.getCheckedRadioButtonId() == -1)
+        {
+            TextView targetView = findViewById(R.id.question8);
+            targetView.getParent().requestChildFocus(targetView, targetView);
+            Toast.makeText(this, "You havent filled Question 8", Toast.LENGTH_SHORT).show();
+            score = 0;
         }
 
         RadioGroup question9 = findViewById(R.id.radiogroup9);
@@ -193,19 +247,37 @@ public class MainActivity extends AppCompatActivity {
             getScore(1);
         }
 
+        if (question9.getCheckedRadioButtonId() == -1)
+        {
+            TextView targetView = findViewById(R.id.question9);
+            targetView.getParent().requestChildFocus(targetView, targetView);
+            Toast.makeText(this, "You havent filled Question 9", Toast.LENGTH_SHORT).show();
+            score = 0;
+        }
+
+
         RadioGroup question10 = findViewById(R.id.radiogroup10);
         int q10 = question10.getCheckedRadioButtonId();
 
-        if (q10 == R.id.a10) {
-            Toast.makeText(this, "We Would Love to Have You: " + name, Toast.LENGTH_SHORT).show();
-
-        } else if (q10 == R.id.b10) {
-            Toast.makeText(this, "We Hope You Reconsider: " + name, Toast.LENGTH_LONG).show();
+        if (question10.getCheckedRadioButtonId() == -1)
+        {
+            TextView targetView = findViewById(R.id.question10);
+            targetView.getParent().requestChildFocus(targetView, targetView);
+            Toast.makeText(this, "You havent filled Question 10", Toast.LENGTH_SHORT).show();
+            score = 0;
         }
 
         display(score);
 
         displayMessage(score);
+
+        if (!name.isEmpty() && question10.getCheckedRadioButtonId() != -1 && question9.getCheckedRadioButtonId() != -1 && question8.getCheckedRadioButtonId() != -1 && question7.getCheckedRadioButtonId() != -1 && (questiona6.isChecked() || questionb6.isChecked() || questionc6.isChecked() || questiond6.isChecked() || questione6.isChecked() || questionf6.isChecked()) && question5.getCheckedRadioButtonId() != -1 && question4.getCheckedRadioButtonId() != -1 && question3.getCheckedRadioButtonId() != -1 && question2.getCheckedRadioButtonId() != -1 ) {
+            TextView targetView = findViewById(R.id.display);
+            targetView.getParent().requestChildFocus(targetView, targetView);
+            Toast.makeText(this, "Thanks: " + name , Toast.LENGTH_SHORT).show();
+        }
+
+
 
     }
 
@@ -221,9 +293,9 @@ public class MainActivity extends AppCompatActivity {
     private void displayMessage(int number) {
         TextView messageTextView = findViewById(R.id.thanks);
         if (number == 10) {
-            messageTextView.setText("Wow, You got 10 out of 10 you are a true Nigerian");
+            messageTextView.setText(R.string.perfectScore);
         } else {
-            messageTextView.setText("Try again, You can do better");
+            messageTextView.setText(R.string.anyScore);
         }
     }
 

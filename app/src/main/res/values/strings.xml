@@ -19,7 +19,7 @@
     <string name="a5">4</string>
     <string name="b5">3</string>
     <string name="c5">8</string>
-    <string name="question_6">6. What are/is the major ethic group/s in Nigeria ?</string>
+    <string name="question_6">6. What are/is the major ethnic group/s in Nigeria ?</string>
     <string name="a6">Igbo</string>
     <string name="b6">Fulani</string>
     <string name="c6">Hausa</string>
@@ -45,5 +45,8 @@
     <string name="reset">RESET</string>
     <string name="thanks">Welcome to a short quiz about Nigeria</string>
     <string name="score">Hi</string>
+    <string name="perfectScore">Wow, You got 10 out of 10 you are a true Nigerian</string>
+    <string name="anyScore">Try again, You can do better</string>
+
 
 </resources>
